@@ -11,12 +11,13 @@ class sudoku(object):
         self.level = level
         self.window = Tk()
         self.window.title('Solve')
+        self.point = 0
+        self.hint_list = []
         canvas = Canvas(self.window, width=110, height=20)
         canvas.pack()
         canvas.create_text(54, 12.5, text='Problem %d' % problem, font='Arial')
         f = Frame(self.window)
         f.pack()
-        self.hint_list = []
         v = []
         k = 0
         for i in range(9):
@@ -82,8 +83,8 @@ class sudoku(object):
         if ct != 0:
             tkinter.messagebox.showwarning(title='Result', message='Some input is invalid.')
         if self.your_ans == self.solution:
-            point += self.level*10
-            tkinter.messagebox.showinfo(title='Result', message='Corect! You got ' + str(point) + ' points')
+            self.point += self.level * 10
+            tkinter.messagebox.showinfo(title='Result', message='Corect! You got ' + str(self.point) + ' points')
             self.window.destroy()
         else:
             tkinter.messagebox.showwarning(title='Result', message='Wrong answer!')
@@ -97,4 +98,7 @@ class sudoku(object):
             x = b[0]
             y = b[1]
             tkinter.messagebox.showinfo(title='Hint', message='Row %d Column %d is %d' % (x + 1, y + 1, self.solution[x][y]))
-            point -= 1
+            self.point -= 1
+    
+    def get_point(self):
+        return self.point

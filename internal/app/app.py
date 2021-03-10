@@ -37,6 +37,7 @@ class app(object):
             ans = eval(file.readline())
             level = 1
             a = sudoku.sudoku(que, ans, level, self.problem)
+            self.point += a.get_point()
 
     def normal(self):
         global normallist, problem, demo
@@ -52,6 +53,7 @@ class app(object):
             ans = eval(file.readline())
             level = 2
             a = sudoku.sudoku(que, ans, level, self.problem)
+            self.point += a.get_point()
 
     def hard(self):
         global hardlist, problem, demo
@@ -67,13 +69,14 @@ class app(object):
             ans = eval(file.readline())
             level = 3
             a = sudoku.sudoku(que, ans, level, self.problem)
+            self.point += a.get_point()
 
     def countdown(self):
         self.canvas.delete(ALL)
         self.time += -1
         self.canvas.create_text(54, 12.5, text=self.time, font='Arial')
         if shared.time_to_int(self.time) == 0:
-            tkinter.messagebox.showinfo(title='Result',  message='Times up! You got '+str(self.point)+' points in total!')
+            tkinter.messagebox.showinfo(title='Result',  message='Times up! You got ' + str(self.point) + ' points in total!')
             self.main.destroy()
         else:
             self.canvas.after(1000,  self.countdown)
