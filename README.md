@@ -19,5 +19,5 @@ python3 -m main
 
 ```
 ## Screenshot
-<img src=./ScreenShot.png, width=500px>
+<img src="./ScreenShot.png" width="500">
 
