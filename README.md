@@ -3,10 +3,14 @@
 ## Table of Content
 - [Introduction](#introduction)
 - [Usage](#usage)
-- [Level](#level)
+- [Screenshot](#screenshot)
 
 ## Introduction
-Sudoku Game written in Python 
+Sudoku Game written in Python3.  
+In this game, there are 3 level of problems
+- Easy (5 problems)
+- Normal (5 problems)
+- Hard (5 problems)
 
 ## Usage
 
@@ -14,7 +18,6 @@ Sudoku Game written in Python
 python3 -m main
 
 ```
-## Level
-- Easy (5 problems)
-- Normal (5 problems)
-- Hard (5 problems)
+## Screenshot
+<img src=./ScreemShot.png, width=500px>
+
